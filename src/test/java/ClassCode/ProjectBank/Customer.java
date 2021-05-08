@@ -2,7 +2,8 @@ package ClassCode.ProjectBank;
 
 import java.util.Scanner;
 
-public class Customer {
+public class Customer extends Accounts {
+
     /**
      * Customer ->
      *      Name
@@ -23,10 +24,13 @@ public class Customer {
 
 
 
+
+
     public Customer(String fullName, int SSN, String Address) {
         customerTotal++;
         customerID = customerTotal;
         System.out.println("Customer information successfully stored thank you");
+
 
     }
 
@@ -63,11 +67,11 @@ public class Customer {
     public void createAccount() {
         System.out.println("Would you like to create a savings or checking account?");
         String AccountRequest = input.next().toLowerCase().trim();
-        accountMethods.createAccount(AccountRequest);
-
+        createAccount(AccountRequest);
 
     }
-     /**          createAccount()
+
+    /**          createAccount()
      *              input parameter : none
      *              if input is savings, create a savings account
      *              if input is checking, create a checking account
@@ -77,18 +81,19 @@ public class Customer {
      *                  Savings account has been created.
      *                  Last 4-digits of account number is XXXX                 **/
 
-     public void showAccountBalance(){
+    public void showAccountBalance(){
+        balance();
 
-     }
+    }
 
-     /**          showAccountBalance()
+    /**          showAccountBalance()
      *              input parameter : none
      *              make it interactive, ask user for account number
      *              show:
      *                  Account number:
      *                  Balance:                            **/
 
-      /**          showAllAccountBalance()
+    /**          showAllAccountBalance()
      *              show:
      *                  You have total X account.
      *                  Account number:
@@ -99,22 +104,27 @@ public class Customer {
      *
      *                  Account number:
      *                  Balance:                             **/
-
-      /**          makeWithdraw:
+    public void makeWithdraw() {
+        withDraw();
+    }
+    /**          makeWithdraw:
      *              make it interactive, ask user for account number
      *              if valid account number, then ask for amount
      *              if amount is valid, make withdraw happen
      *              show:
      *                  Please collect $XXXX.YY amount
      *                  Your updated balance: $NNNN.MM              **/
+    public void makeDeposit() {
+        deposit();
+    }
 
 
-      /**          makeDeposit:
+    /**          makeDeposit:
      *              make it interactive, ask user for account number
      *              if valid account number, then ask to enter the amount
      *              if amount is valid, make deposit happen
      *              show:
      *                  Amount has been deposited successfully
      *                  Your updated balance: $NNNN.MM
-       *                  **/
+     *                  **/
 }
