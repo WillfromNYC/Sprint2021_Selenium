@@ -12,7 +12,7 @@ public class kickoff {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Will\\Documents\\git\\Spring2021_Selenium\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://www.facebook.com"); //http = protocol, facebook = domain// driver= variable of new chrome driver
+        driver.get("https://www.amazon.com"); //http = protocol, facebook = domain// driver= variable of new chrome driver
 
     }
 }
