@@ -1,5 +1,6 @@
 package ClassCode.ProjectBank;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Customer extends Accounts {
@@ -16,14 +17,11 @@ public class Customer extends Accounts {
     //static int savingAccount = 0000;
     //int checkingAccount = 0000;
     int customerTotal = 0;
-    int customerID;
+    int customerID = 0;
+    
 
     Scanner input = new Scanner(System.in);
     Accounts accountMethods = new Accounts();
-
-
-
-
 
 
     public Customer(String fullName, int SSN, String Address) {

@@ -11,6 +11,10 @@ public class Bank {
         Customer c3 = new Customer("Mary", 22345678, "3 bank st");
         Customer c4 = new Customer("April", 42345678, "4 bank st");
 
+        c1.createAccount();
+
+        c2.createAccount();
+
 
     }
 

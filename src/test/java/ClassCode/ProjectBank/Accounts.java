@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Accounts {//public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    int accountID = 0000;
+    static int accountID = 0000;
     HashMap<Integer,Double> idBalance = new HashMap<>();
 
 
@@ -24,9 +24,9 @@ public class Accounts {//public static void main(String[] args) {
     //}
 
     public void createAccount(String AccountRequest) {
-        System.out.println("Which account are you opening with us today?");
-        String accountType = input.next().toLowerCase().trim();
-        if (accountType.contains("saving")) {
+        //System.out.println("Would you like to create a savings or checking account?");
+        //AccountRequest = input.next().toLowerCase().trim();
+        if (AccountRequest.contains("saving")) {
             accountID++;
             customerAccountNum = accountID;
             cSavingsBalance = defaultBalance;
@@ -34,7 +34,7 @@ public class Accounts {//public static void main(String[] args) {
 
             System.out.println("Savings account has been created. Last 4-digits of account number is " + customerAccountNum);
 
-        } else if (accountType.contains("check")) {
+        } else if (AccountRequest.contains("check")) {
             accountID++;
             customerAccountNum = accountID;
             cCheckingBalance = defaultBalance;
@@ -66,7 +66,7 @@ public class Accounts {//public static void main(String[] args) {
             newBalance = newBalance - withDrawAmount;
             idBalance.remove(withDrawAccountNum);
             idBalance.put(withDrawAccountNum,newBalance);
-            System.out.println("Please collect $" + withDrawAccountNum + "amount. Your updated balance: $" + newBalance);
+            System.out.println("Please collect $" + withDrawAmount + "amount. Your updated balance: $" + newBalance);
 
         } else {
             System.out.println("We could not find your account number please try it again");
@@ -93,7 +93,7 @@ public class Accounts {//public static void main(String[] args) {
             newBalance = newBalance + depositAmount;
             idBalance.remove(depositAccountNum);
             idBalance.put(depositAccountNum,newBalance);
-            System.out.println("$" + depositAccountNum + "Amount has been deposited successfully. Your updated balance: $" + newBalance);
+            System.out.println("$" + depositAmount + "Amount has been deposited successfully. Your updated balance: $" + newBalance);
 
         } else {
             System.out.println("We could not find your account number please try it again");
