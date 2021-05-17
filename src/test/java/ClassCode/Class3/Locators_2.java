@@ -68,7 +68,7 @@ public class Locators_2 {
      * eg: //input[starts-with(@aria-label, 'Mobi')]
      *
      * 6. Using starting portion of text-value
-     * //tag[starts-with(text(), 'Starting Text Val')]
+     * //tag[ ]
      * eg:  //div[starts-with(text(), 'Mob')]
      *
      * 7. and/or operators

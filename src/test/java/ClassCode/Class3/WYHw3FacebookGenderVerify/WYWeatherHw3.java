@@ -1,14 +1,15 @@
-package ClassCode.Class3;
+package ClassCode.Class3.WYHw3FacebookGenderVerify;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-public class WYWeatherH3 {
+public class WYWeatherHw3 {
 
 
 
@@ -64,6 +65,32 @@ public class WYWeatherH3 {
 
         tempCompare(webTempToInt(stringSummaryTemp),webTempToInt(stringFeelTemp),webTempToInt(stringHighTemp));
 
+        //int expected
+
+        //getting actual C temp value from clicking C selection on webpage
+        By tempConversionDrop = By.xpath("//b[@class= 'button']");
+                //"//div[contains(@class,'selectric-wrapper selectric-units selectric-below')]"); wrong web element
+        WebElement webTempConversionDrop = driver.findElement(tempConversionDrop);
+        webTempConversionDrop.click();
+
+        By celisusMphDrop = By.xpath("//li[@data-index='3' and contains(text(), 'mph') and contains(text(), '˚C') and @class='last']");
+        // //li[@data-index='3' and contains(text(), 'mph') and contains(text(), '˚C') and @class='last']
+        WebElement webCelisusMphDrop = driver.findElement(celisusMphDrop);
+        webTempConversionDrop.click();
+
+        ////*[contains(@class,'selectric-wrapper selectric-units selectric-below' and @data-index='3')]
+
+        /*By tempConversionDrop = By.xpath("//div[@class='selectric-wrapper selectric-units selectric-below'] and @data-index='3'");
+        WebElement webTempConversionDrop = driver.findElement(feelTemp);
+        webTempConversionDrop.click();*/
+
+
+
+
+
+
+        //Assert.assertEquals(   , tempFToC(webTempToInt(stringSummaryTemp)), "Actual temp and converted Celsius do not match");
+
 
     }
 
@@ -100,8 +127,14 @@ public class WYWeatherH3 {
         if (mainTemp > lowTemp && (mainTemp < highTemp )) {
             System.out.println("the main temp is between the high and low temp");
         } else {
-            System.out.println("Error, please check values again");
+            System.out.println("the main temp is out of bound when compared to the low and high temp");
         }
+    }
+
+    public static int tempFToC(int temp) {
+        temp = (temp - 32) * 5/9;
+        int roundTempC = Math.round(temp);
+        return roundTempC;
     }
 
 }
