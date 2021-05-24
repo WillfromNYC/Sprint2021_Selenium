@@ -101,7 +101,7 @@ public class WYWeatherHw3 {
 
 
 
-    public int webTempToInt(String[] Temp) {
+    public static int webTempToInt(String[] Temp) {
 
         String degree = "˚";
         String sSummaryTemp = "";
